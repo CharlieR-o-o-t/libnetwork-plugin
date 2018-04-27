@@ -32,7 +32,7 @@ func NewIpamDriver(client *datastoreClient.Client) ipam.Ipam {
 }
 
 func (i IpamDriver) GetCapabilities() (*ipam.CapabilitiesResponse, error) {
-	resp := ipam.CapabilitiesResponse{}
+	resp := ipam.CapabilitiesResponse{RequiresMACAddress: true}
 	logutils.JSONMessage("GetCapabilities response", resp)
 	return &resp, nil
 }
